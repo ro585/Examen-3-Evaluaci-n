@@ -38,10 +38,21 @@ public class ListaProductos {
      * @param campo cadena a analizar
      * @return True: Cadena vacía, False: Cadena correcta
      */
+    
+    
+    
     private boolean check_null(String campo){
     
         if (campo.replace(" ","") == "")  return true; else return false;
     }
+
+    /**
+     * Este metodo añade un producto al carro medianteun parametro de entrada que
+     * seria el del producto. 
+     * @param campo objeto producto a analizar
+     * @return null: si el producto está duplicado, sino suma uno a a la lista.
+     * Es decir, un producto. 
+     */
 
     public Producto addProducto(Producto prod) {
         
@@ -54,7 +65,14 @@ public class ListaProductos {
         listaP.put(prod.getcode(), prod);
         return prod;
     }
-
+    
+    /**
+     * este metodo elimina un producto del carro, comprueba si el no es nulo, es 
+     * decir, si existe en la cesta y de ser así lo resta.
+     * @param codigo cadena a analizar (codigo)
+     * @return produccto para eliminar
+     */
+    
     public Producto eliminarProducto(String codigo) { 
         
         Producto prod = buscarProducto(codigo);
@@ -65,7 +83,15 @@ public class ListaProductos {
         }
         return prod;
     }
-
+    
+    /**
+     * Este metodo entiendo que busca un producto en la cesta contrastando el codigo
+     * de los productos.
+     * @param codigo cadena a analizar (codigo)
+     * @return el producto si no está en la lista y de estar en la lista retorna el 
+     * codigo del producto de la lista. 
+     */
+    
     public Producto buscarProducto(String codigo) { 
         Producto prod = null;
         
@@ -76,12 +102,22 @@ public class ListaProductos {
             return listaP.get(codigo);
         }
     }
-
+    
+    /**
+     * Este metodo añade los productos a la lista
+     * @return los productos de la lista
+     */
+    
     public ArrayList<Producto> getProductos() {
         ArrayList<Producto> prodsList = new ArrayList<>();
         prodsList.addAll(listaP.values());
         return prodsList;
     }
+    
+    /**
+     * esta función va a guardar el numero de productos de la lista
+     * @return el numero total de productos
+     */
     
     public int totalProductos(){
             return this.getN();
