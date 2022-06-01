@@ -1,8 +1,8 @@
 /*
-*	grupo  :
-*	alumno :
-*	n.exp. :
-*	fecha  :
+*	grupo  :1ºGDAM
+*	alumno :Rodrigo Álvarez lago
+*	n.exp. :7230
+*	fecha  :01-06-22
  */
 package Cheese;
 
